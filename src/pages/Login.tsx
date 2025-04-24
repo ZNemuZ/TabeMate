@@ -1,6 +1,12 @@
 import logo from '../assets/TabeMateLogo.png';
-
+import { useNavigate } from 'react-router-dom';
 export const Login = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault(); //リロード防止
+    navigate('/foods');
+  };
   return (
     <div className="flex items-center justify-center h-screen bg-gray-50">
       <div className="flex justify-center mb-6">
@@ -10,7 +16,10 @@ export const Login = () => {
           className="fixed top-24 left-1/2 -translate-x-1/2 h-90"
         />
       </div>
-      <form className="bg-white p-6 rounded shadow-md w-full max-w-xs space-y-4">
+      <form
+        className="bg-white p-6 rounded shadow-md w-full max-w-xs space-y-4"
+        onSubmit={handleLogin}
+      >
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             ユーザーID
