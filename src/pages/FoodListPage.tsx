@@ -1,10 +1,20 @@
 import FoodList from '../components/Organims/FoodList';
 import SideBar from '../components/Organims/SideBar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const FoodListPage = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const [delayedOpen, setDelayedOpen] = useState(true);
+
+  useEffect(() => {
+    if (isOpen) {
+      setDelayedOpen(true);
+    } else {
+      const timer = setTimeout(() => setDelayedOpen(false), 100);
+      return () => clearTimeout(timer); //ボタンをすぐ押されたときに秒数がたまらないようにする
+    }
+  }, [isOpen]);
 
   return (
     <div>
@@ -16,12 +26,12 @@ const FoodListPage = () => {
       </button>
       <div
         className={`grid ${
-          isOpen ? 'grid-cols-[200px_1fr]' : 'grid-cols-[0px_1fr]'
+          delayedOpen ? 'grid-cols-[200px_1fr]' : 'grid-cols-[0px_1fr]'
         } h-screen`}
       >
         <SideBar isOpen={isOpen} />
         <div className="p-6 overflow-y-auto bg-gray-50">
-          <FoodList isOpen={isOpen} />
+          <FoodList isOpen={delayedOpen} />
         </div>
       </div>
     </div>

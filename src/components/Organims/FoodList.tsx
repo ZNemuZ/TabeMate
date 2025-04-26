@@ -24,7 +24,7 @@ const dummeyFoods = [
 const FoodList = ({ isOpen }: LayoutOpenProps) => {
   return (
     <div
-      className={`p-6 overflow-y-auto transform transition-all duration-700${
+      className={`p-6 overflow-y-auto transform transition-all duration-300 ease-in-out ${
         isOpen ? 'ml-[10px] ' : 'ml-0'
       }`}
     >
