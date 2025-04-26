@@ -1,14 +1,17 @@
-import React from 'react';
-type FoodItemProps = {
-  name: string;
-  category: string;
-  exp: string;
-  image: string;
-};
+import { useNavigate } from 'react-router-dom';
+import { FoodItemProps } from '../../types/FoodItemProps';
 
-const FoodItem = ({ name, category, exp, image }: FoodItemProps) => {
+const FoodItem = ({ id, name, category, exp, image }: FoodItemProps) => {
+  const navigate = useNavigate();
+  const clickedItem = (foodsId: string) => {
+    navigate(foodsId);
+  };
+
   return (
-    <div className="bg-white rouded-lg shadow-md p-4 w-full">
+    <div
+      className="bg-white rouded-lg shadow-md p-4 w-full"
+      onClick={() => clickedItem(`/foods/${id}`)}
+    >
       <img
         src={image}
         alt={name}

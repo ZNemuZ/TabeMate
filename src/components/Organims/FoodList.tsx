@@ -2,18 +2,21 @@ import FoodItem from '../Molecules/FoodItem';
 import { LayoutOpenProps } from '../../types/LayoutOpenProps';
 const dummeyFoods = [
   {
+    id: '001',
     name: 'たまご',
     category: '卵類',
     exp: '2025/04/25',
     image: '../../assets/gohan.jpg',
   },
   {
+    id: '002',
     name: 'にんじん',
     category: '野菜',
     exp: '2025/04/20',
     image: '../../assets/gohan.jpg',
   },
   {
+    id: '003',
     name: '牛乳',
     category: '飲料',
     exp: '2025/04/22',
