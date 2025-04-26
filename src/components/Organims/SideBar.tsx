@@ -1,12 +1,14 @@
-type SideBarProps = {
-  isOpen: boolean;
-};
+import { LayoutOpenProps } from '../../types/LayoutOpenProps';
 
-const SideBar = ({ isOpen }: SideBarProps) => {
+const SideBar = ({ isOpen }: LayoutOpenProps) => {
   return (
     <div>
       <div
-        className={`bg-gray-800 text-white p-4 ${isOpen ? 'block' : 'hidden'}`}
+        className={`fixed top-0 left-0 w-[200px] bg-gray-800 text-white p-4 h-screen transform transition-all duration-500 ${
+          isOpen
+            ? 'translate-x-0 opacity-100'
+            : '-translate-x-full opacity-40 ease-in-out'
+        }`}
       >
         <ul className="space-y-5 mt-10">
           <li>

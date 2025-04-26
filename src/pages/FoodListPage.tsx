@@ -10,18 +10,18 @@ const FoodListPage = () => {
     <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4  left-4 text-white bg-gray-800 rounded"
+        className="fixed top-4 z-1 left-4 text-white bg-gray-800 rounded"
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
       <div
         className={`grid ${
           isOpen ? 'grid-cols-[200px_1fr]' : 'grid-cols-[0px_1fr]'
-        } h-screen"`}
+        } h-screen`}
       >
         <SideBar isOpen={isOpen} />
         <div className="p-6 overflow-y-auto bg-gray-50">
-          <FoodList />
+          <FoodList isOpen={isOpen} />
         </div>
       </div>
     </div>
