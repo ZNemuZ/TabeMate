@@ -1,7 +1,13 @@
-const SideBar = () => {
+type SideBarProps = {
+  isOpen: boolean;
+};
+
+const SideBar = ({ isOpen }: SideBarProps) => {
   return (
-    <div className="grid grid-cols-[200px_1fr] h-screen">
-      <div className="bg-gray-800 text-white p-4">
+    <div>
+      <div
+        className={`bg-gray-800 text-white p-4 ${isOpen ? 'block' : 'hidden'}`}
+      >
         <ul className="space-y-2">
           <li>
             <a href="/foods" className="block hover:text-blue-300 ">
