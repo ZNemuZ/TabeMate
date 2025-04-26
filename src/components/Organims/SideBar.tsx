@@ -17,8 +17,8 @@ const SideBar = ({ isOpen }: LayoutOpenProps) => {
             </a>
           </li>
           <li>
-            <a href="/add" className="block hover:text-blue-300">
-              食材詳細
+            <a href="/recipe" className="block hover:text-blue-300">
+              レシピ提案
             </a>
           </li>
           <li>
