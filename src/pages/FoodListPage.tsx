@@ -1,14 +1,18 @@
 import FoodList from '../components/Organims/FoodList';
 import SideBar from '../components/Organims/SideBar';
 import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const FoodListPage = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div>
-      <button onClick={() => setIsOpen(!isOpen)} className="text-black rounded">
-        {isOpen ? 'Close' : 'Open'}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="fixed top-4  left-4 text-white bg-gray-800 rounded"
+      >
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
       <div
         className={`grid ${

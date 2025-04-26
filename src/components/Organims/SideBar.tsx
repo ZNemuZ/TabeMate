@@ -8,7 +8,7 @@ const SideBar = ({ isOpen }: SideBarProps) => {
       <div
         className={`bg-gray-800 text-white p-4 ${isOpen ? 'block' : 'hidden'}`}
       >
-        <ul className="space-y-2">
+        <ul className="space-y-5 mt-10">
           <li>
             <a href="/foods" className="block hover:text-blue-300 ">
               食材一覧
