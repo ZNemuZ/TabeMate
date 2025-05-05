@@ -2,6 +2,7 @@ import React from 'react';
 import SideBar from '../components/Organims/SideBar';
 import { useEffect, useState } from 'react';
 import SideBarToggleBtn from '../components/Atoms/SideBarToggleBtn';
+import FoodDetail from '../components/Organims/FoodDetail';
 
 const FoodDetailPage = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -25,7 +26,9 @@ const FoodDetailPage = () => {
         } h-screen`}
       >
         <SideBar isOpen={isOpen} />
-        <div className="p-6 overflow-y-auto bg-gray-50">aa</div>
+        <div className="p-6 overflow-y-auto bg-gray-50">
+          <FoodDetail />
+        </div>
       </div>
     </div>
   );
